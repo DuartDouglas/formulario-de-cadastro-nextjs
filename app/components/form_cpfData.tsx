@@ -9,7 +9,7 @@ type Inputs = {
   email: string;
 };
 
-export default function FormData() {
+export default function FormCpfData() {
   const {
     register,
     handleSubmit,
