@@ -6,7 +6,7 @@ import FormCpfData from "./components/form_cpfData";
 import FormCnpjData from "./components/form_cnpjData";
 
 export default function Home() {
-  const [typeRegister, setTypeRegister] = useState<"cpf" | "cnpj">("cpf");
+  const [typeRegister, setTypeRegister] = useState<"cpf" | "cnpj">("cnpj");
 
   return (
     <div className="w-full my-12 border-2 border-[#374151]  rounded-sm p-10 dark:bg-[#1F2937]">
