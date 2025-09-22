@@ -16,23 +16,23 @@ export default function FormSelectType({
         <label className="flex items-center gap-2">
           <input
             type="radio"
-            value="cpf"
-            checked={typeRegister === "cpf"}
-            onChange={() => setTypeRegister("cpf")}
-            className="accent-[var(--brand-color)]"
-          />
-          CPF
-        </label>
-
-        <label className="flex items-center gap-2">
-          <input
-            type="radio"
             value="cnpj"
             checked={typeRegister === "cnpj"}
             onChange={() => setTypeRegister("cnpj")}
             className="accent-[var(--brand-color)]"
           />
           CNPJ
+        </label>
+
+        <label className="flex items-center gap-2">
+          <input
+            type="radio"
+            value="cpf"
+            checked={typeRegister === "cpf"}
+            onChange={() => setTypeRegister("cpf")}
+            className="accent-[var(--brand-color)]"
+          />
+          CPF
         </label>
       </form>
     </div>
