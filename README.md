@@ -14,7 +14,7 @@ O aplicativo possui uma UI/UX para cadastro de CPF e CNPJ de usuários
 ## Etapas do projeto
 
 - [x] Layout formulário CPF
-- [ ] Layout formulário CNPJ
+- [x] Layout formulário CNPJ
 - [x] Layout Formulário endereço
 - [x] Selecionar opção do tipo de registro (CPF ou CNPJ) e mudar formulário
 - [ ] Validar dados do formulário
