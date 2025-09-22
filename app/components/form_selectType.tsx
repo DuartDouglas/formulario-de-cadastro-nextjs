@@ -19,6 +19,7 @@ export default function FormSelectType({
             value="cpf"
             checked={typeRegister === "cpf"}
             onChange={() => setTypeRegister("cpf")}
+            className="accent-[var(--brand-color)]"
           />
           CPF
         </label>
@@ -29,7 +30,7 @@ export default function FormSelectType({
             value="cnpj"
             checked={typeRegister === "cnpj"}
             onChange={() => setTypeRegister("cnpj")}
-            className="h-max"
+            className="accent-[var(--brand-color)]"
           />
           CNPJ
         </label>
