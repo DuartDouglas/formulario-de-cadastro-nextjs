@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  } */
+
+:root {
+  --background: #ffffff;
+  --color: #111827;
+  --brand-color: #9333ea;
+  --brand-color-ligth: #a855f7;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #111827;
+    --color: #ededed;
+    /* --background: #111827;
+    --foreground: #ededed; */
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--color);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.form_field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+input {
+  background-color: var(--background);
+  border: 1px solid #374151;
+  border-radius: 4px;
+  height: 3rem;
+  padding: 12px;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.error {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fb7185;
+}
+
+.btn-submit {
+  background-color: var(--brand-color);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: var(--brand-color-ligth);
 }
