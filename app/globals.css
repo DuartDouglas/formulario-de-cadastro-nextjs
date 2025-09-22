@@ -35,7 +35,7 @@ body {
   gap: 2px;
 }
 
-input {
+.form_field input {
   background-color: var(--background);
   border: 1px solid #374151;
   border-radius: 4px;
@@ -47,7 +47,8 @@ input::placeholder {
   color: #9ca3af;
 }
 
-label {
+label,
+.label {
   font-size: 14px;
   font-weight: 600;
   color: #e5e7eb;
