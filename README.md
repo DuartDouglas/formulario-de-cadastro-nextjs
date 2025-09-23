@@ -18,5 +18,6 @@ O aplicativo possui uma UI/UX para cadastro de CPF e CNPJ de usuários
 - [x] Layout Formulário endereço
 - [x] Selecionar opção do tipo de registro (CPF ou CNPJ) e mudar formulário
 - [x] Validar dados do formulário
-- [ ] Salvar dados o formulário usando context API
-- [ ] Resgatar dados em uma última tela e limpar os dados de context
+- [x] Salvar dados o formulário usando context API
+- [ ] Exibir dados na tela de resumo
+- [ ] Limpar dados e retorna para tela inicial
