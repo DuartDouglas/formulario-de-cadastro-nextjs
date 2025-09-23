@@ -1,21 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import FormSelectType from "./components/form_selectType";
-import FormCpfData from "./components/form_cpfData";
-import FormCnpjData from "./components/form_cnpjData";
+import SelectRegistrationTypeForm from "./UI/SelectRegistrationTypeForm";
+import CpfRegistrationForm from "./UI/CpfRegistrationForm";
+import CnpjRegistrationForm from "./UI/CnpjRegistrationForm";
 
 export default function Home() {
   const [typeRegister, setTypeRegister] = useState<"cpf" | "cnpj">("cnpj");
 
   return (
     <div className="w-full my-12 border-2 border-[#374151]  rounded-sm p-10 dark:bg-[#1F2937]">
-      <FormSelectType
+      <SelectRegistrationTypeForm
         typeRegister={typeRegister}
         setTypeRegister={setTypeRegister}
       />
-      {typeRegister === "cpf" && <FormCpfData />}
-      {typeRegister === "cnpj" && <FormCnpjData />}
+      {typeRegister === "cpf" && <CpfRegistrationForm />}
+      {typeRegister === "cnpj" && <CnpjRegistrationForm />}
     </div>
   );
 }

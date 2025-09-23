@@ -4,11 +4,15 @@ O aplicativo possui uma UI/UX para cadastro de CPF e CNPJ de usuários
 
 - Quando for feito um `cadastro de CPF` o sistema utiliza a API do _Brasilapi_ para buscar os dados de endereço através do CEP
 - Para `cadastros de CNPJ` também é utilizada a API da _Brasilapi_ para buscar os dados do CNPJ. Ela trás todos os dados inclusive endereço do CNPJ
+- Todos os dados são exibidos em uma página de resumo final
+- Nenhum dado é enviado para um banco de dados ou servidor
 
-## Alguns dados sobre o projeto
+## Tecnologias utlizadas no projeto
 
-- O projeto é desenvolvido utlizando o Framework NextJs e TypeScript
-- Para as estilizações é somente CSS e Tailwind
+- O projeto é desenvolvido utilizando o Framework NextJs e TypeScript
+- Para as estilizações utilizei somente CSS e Tailwind
+- Para os formulários optei por utlizar o react hook form (mesmo sendo um projeto simples já estou acostumado a utilizá-lo)
+- Utilizei Context API para manter os dados globalmente e resgatálos na página de resumo
 - Esse projeto faz solicitações diretas à api Brasil API: https://brasilapi.com.br/docs
 
 ## Etapas do projeto

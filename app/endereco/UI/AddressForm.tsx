@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { DataContext } from "../data-provider";
+import { DataContext } from "../../data-provider";
 
 export interface IDataAddress {
   cep: number;
@@ -15,7 +15,7 @@ export interface IDataAddress {
   complement: string;
 }
 
-export default function FormAddress() {
+export default function AddressForm() {
   const { formData, setFormData } = useContext(DataContext);
   const router = useRouter();
 

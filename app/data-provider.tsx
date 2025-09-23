@@ -1,9 +1,9 @@
 "use client";
 
 import { createContext, useState } from "react";
-import { ICnpjData } from "./components/form_cnpjData";
-import { ICpfData } from "./components/form_cpfData";
-import { IDataAddress } from "./components/form_address";
+import { ICnpjData } from "./UI/CnpjRegistrationForm";
+import { ICpfData } from "./UI/CpfRegistrationForm";
+import { IDataAddress } from "./endereco/UI/AddressForm";
 
 interface IFormData {
   cpfData?: ICpfData;

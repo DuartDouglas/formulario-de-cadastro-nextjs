@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import DataProvider from "./data-provider";
-import "./globals.css";
+import "./UI/globals.css";
 import { FaGithub } from "react-icons/fa6";
 
 export const metadata: Metadata = {

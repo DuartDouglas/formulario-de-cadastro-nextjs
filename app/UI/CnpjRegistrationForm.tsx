@@ -3,62 +3,85 @@
 import { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { DataContext } from "../data-provider";
+import { useRouter } from "next/navigation";
 
-export interface ICpfData {
-  cpf: string;
-  name: string;
+export interface ICnpjData {
+  cnpj: string;
+  companyName: string;
+  tradeName: string;
   phone: string;
   email: string;
 }
 
-export default function FormCpfData() {
+export default function CnpjRegistrationForm() {
   const { formData, setFormData } = useContext(DataContext);
+  const router = useRouter();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<ICpfData>();
+  } = useForm<ICnpjData>();
 
-  const onSubmit: SubmitHandler<ICpfData> = (data) => {
-    setFormData({ ...formData, cpfData: data });
+  const onSubmit: SubmitHandler<ICnpjData> = (data) => {
+    setFormData({ ...formData, cnpjData: data });
+    router.push("/endereco");
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
       <div className="form_field">
-        <label htmlFor="cpf">Seu CPF</label>
+        <label htmlFor="cnpj">CNPJ da Empresa</label>
         <input
-          {...register("cpf", { required: true, minLength: 11, maxLength: 14 })}
-          id="cpf"
-          placeholder="000.000.000-00"
+          {...register("cnpj", {
+            required: true,
+            pattern: /^\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}$/, // Aceita 00.000.000/0001-00 ou 00000000000100
+          })}
+          id="cnpj"
+          placeholder="00.000.000/0001-00"
+          autoComplete="cnpj"
         />
-        {errors.cpf?.type === "required" && (
+        {errors.cnpj?.type === "required" && (
           <span className="error">Campo obrigatório</span>
         )}
-        {errors.cpf?.type === "minLength" && (
-          <span className="error">CPF Inválido</span>
-        )}
-        {errors.cpf?.type === "maxLength" && (
-          <span className="error">CPF Inválido</span>
+        {errors.cnpj?.type === "pattern" && (
+          <span className="error">CNPJ inválido</span>
         )}
       </div>
 
       <div className="form_field">
-        <label htmlFor="name">Seu nome</label>
+        <label htmlFor="companyName">Razão Social</label>
         <input
-          {...register("name", {
+          {...register("companyName", {
             required: true,
             pattern: /^[A-Za-zÀ-ÿ\s]{3,}$/, // Nome com pelo menos 3 letras, aceita acentos e espaços
           })}
-          id="name"
-          placeholder="Nome completo"
+          id="companyName"
+          placeholder="Nome da Empresa"
         />
-        {errors.name?.type === "required" && (
+        {errors.companyName?.type === "required" && (
           <span className="error">Campo obrigatório</span>
         )}
-        {errors.name?.type === "pattern" && (
-          <span className="error">Nome inválido</span>
+        {errors.companyName?.type === "pattern" && (
+          <span className="error">Razão social inválida</span>
+        )}
+      </div>
+
+      <div className="form_field">
+        <label htmlFor="tradeName">Nome Fantasia</label>
+        <input
+          {...register("tradeName", {
+            required: true,
+            pattern: /^[A-Za-zÀ-ÿ\s]{3,}$/, // Nome com pelo menos 3 letras, aceita acentos e espaços
+          })}
+          id="tradeName"
+          placeholder="Nome fantasia"
+        />
+        {errors.tradeName?.type === "required" && (
+          <span className="error">Campo obrigatório</span>
+        )}
+        {errors.tradeName?.type === "pattern" && (
+          <span className="error">Nome fantasia inválido</span>
         )}
       </div>
 
@@ -84,8 +107,7 @@ export default function FormCpfData() {
       </div>
 
       <div className="form_field">
-        <label htmlFor="email">Seu nome</label>
-
+        <label htmlFor="email">E-mail</label>
         <input
           {...register("email", {
             required: true,

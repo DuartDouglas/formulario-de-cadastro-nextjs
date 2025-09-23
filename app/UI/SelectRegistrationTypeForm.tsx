@@ -2,7 +2,7 @@
 
 import { Dispatch, SetStateAction } from "react";
 
-export default function FormSelectType({
+export default function SelectRegistrationTypeForm({
   typeRegister,
   setTypeRegister,
 }: {
