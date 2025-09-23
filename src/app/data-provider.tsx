@@ -1,20 +1,7 @@
 "use client";
 
 import { createContext, useState } from "react";
-import { ICnpjData } from "./UI/CnpjRegistrationForm";
-import { ICpfData } from "./UI/CpfRegistrationForm";
-import { IDataAddress } from "./endereco/UI/AddressForm";
-
-interface IFormData {
-  cpfData?: ICpfData;
-  cnpjData?: ICnpjData;
-  addressData?: IDataAddress;
-}
-
-interface IDataContext {
-  formData: IFormData;
-  setFormData: (data: IFormData) => void;
-}
+import { IDataContext, IFormData } from "../types/context";
 
 export const DataContext = createContext<IDataContext>({
   formData: {},

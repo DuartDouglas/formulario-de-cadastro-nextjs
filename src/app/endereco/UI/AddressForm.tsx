@@ -4,16 +4,7 @@ import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { DataContext } from "../../data-provider";
-
-export interface IDataAddress {
-  cep: number;
-  state: string;
-  city: number;
-  street: string;
-  number: number | string;
-  district: string;
-  complement: string;
-}
+import { IDataAddress } from "@/src/types/forms";
 
 export default function AddressForm() {
   const { formData, setFormData } = useContext(DataContext);

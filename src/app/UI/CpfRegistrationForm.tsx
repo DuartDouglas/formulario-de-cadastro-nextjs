@@ -4,13 +4,7 @@ import { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { DataContext } from "../data-provider";
 import { useRouter } from "next/navigation";
-
-export interface ICpfData {
-  cpf: string;
-  name: string;
-  phone: string;
-  email: string;
-}
+import { ICpfData } from "@/src/types/forms";
 
 export default function CpfRegistrationForm() {
   const { formData, setFormData } = useContext(DataContext);

@@ -4,14 +4,7 @@ import { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { DataContext } from "../data-provider";
 import { useRouter } from "next/navigation";
-
-export interface ICnpjData {
-  cnpj: string;
-  companyName: string;
-  tradeName: string;
-  phone: string;
-  email: string;
-}
+import { ICnpjData } from "@/src/types/forms";
 
 export default function CnpjRegistrationForm() {
   const { formData, setFormData } = useContext(DataContext);
