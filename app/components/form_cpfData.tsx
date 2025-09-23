@@ -1,24 +1,28 @@
 "use client";
 
+import { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { DataContext } from "../data-provider";
 
-type Inputs = {
+export interface ICpfData {
   cpf: string;
   name: string;
-  phone: number;
+  phone: string;
   email: string;
-};
+}
 
 export default function FormCpfData() {
+  const { formData, setFormData } = useContext(DataContext);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<ICpfData>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-  // salvar dados em local host e recuperar na finalização
-  // depois limpar dados de localhost após finalizar
+  const onSubmit: SubmitHandler<ICpfData> = (data) => {
+    setFormData({ ...formData, cpfData: data });
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">

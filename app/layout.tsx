@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-//import { Geist, Geist_Mono } from "next/font/google";
+import DataProvider from "./data-provider";
 import "./globals.css";
 import { FaGithub } from "react-icons/fa6";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "Formulário",
@@ -25,8 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      {/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex justify-center `}> */}
-      <body className={`antialiased flex justify-center `}>
+      <body>
         <main className="flex flex-col items-center justify-center py-6 px-4 md:max-w-4xl md:py-11 md:px-32 ">
           <div className="w-full flex flex-row items-center justify-between">
             <h1 className="text-2xl font-semibold">Formulário</h1>
@@ -38,7 +27,7 @@ export default function RootLayout({
               <FaGithub />
             </a>
           </div>
-          {children}
+          <DataProvider>{children}</DataProvider>
           <div className="text-center">
             <h3 className="font-semibold text-lg">
               Informações sobre o projeto

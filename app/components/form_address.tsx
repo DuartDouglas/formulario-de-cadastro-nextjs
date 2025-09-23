@@ -1,8 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { DataContext } from "../data-provider";
 
-type Inputs = {
+export interface IDataAddress {
   cep: number;
   state: string;
   city: number;
@@ -10,16 +13,22 @@ type Inputs = {
   number: number | string;
   district: string;
   complement: string;
-};
+}
 
 export default function FormAddress() {
+  const { formData, setFormData } = useContext(DataContext);
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<IDataAddress>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<IDataAddress> = (data) => {
+    setFormData({ ...formData, addressData: data });
+    router.push("/resumo");
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">

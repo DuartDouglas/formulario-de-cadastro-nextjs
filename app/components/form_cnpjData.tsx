@@ -1,23 +1,32 @@
 "use client";
 
+import { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { DataContext } from "../data-provider";
+import { useRouter } from "next/navigation";
 
-type Inputs = {
+export interface ICnpjData {
   cnpj: string;
   companyName: string;
   tradeName: string;
-  phone: number;
+  phone: string;
   email: string;
-};
+}
 
 export default function FormCnpjData() {
+  const { formData, setFormData } = useContext(DataContext);
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<ICnpjData>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<ICnpjData> = (data) => {
+    setFormData({ ...formData, cnpjData: data });
+    router.push("/endereco");
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
