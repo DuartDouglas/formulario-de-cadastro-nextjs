@@ -23,5 +23,11 @@ O aplicativo possui uma UI/UX para cadastro de CPF e CNPJ de usuários
 - [x] Selecionar opção do tipo de registro (CPF ou CNPJ) e mudar formulário
 - [x] Validar dados do formulário
 - [x] Salvar dados o formulário usando context API
+- [x] Buscar dados na API de CEP
+  - [x] Setar dados nos inputs
+- [ ] Buscar dados na API de CNPJ
+  - [ ] Setar dados nos inputs
 - [ ] Exibir dados na tela de resumo
 - [ ] Limpar dados e retorna para tela inicial
+- [ ] Melhorar UI do tema em modo claro
+- [ ] Validações avançadas dos inputs
