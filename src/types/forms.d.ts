@@ -14,11 +14,11 @@ export interface ICpfData {
 }
 
 export interface IDataAddress {
-  cep: number;
+  cep: string;
   state: string;
-  city: number;
+  city: string;
   street: string;
-  number: number | string;
+  number: string;
   district: string;
   complement: string;
 }
