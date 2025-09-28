@@ -28,7 +28,7 @@ export default function CpfRegistrationForm() {
         <input
           {...register("cpf", { required: true, minLength: 11, maxLength: 14 })}
           id="cpf"
-          autoComplete="on"
+          autoComplete="username"
           placeholder="000.000.000-00"
         />
         {errors.cpf?.type === "required" && (
@@ -69,7 +69,7 @@ export default function CpfRegistrationForm() {
             pattern: /^\(?\d{2}\)?\s?\d{1}\s?\d{4}-?\d{4}$/, // Ex: (11) 9 1234-5678
           })}
           id="phone"
-          autoComplete="on"
+          autoComplete="tel"
           placeholder="(00) 0 0000-0000"
         />
 
@@ -92,7 +92,7 @@ export default function CpfRegistrationForm() {
             pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // E-mail simples
           })}
           id="email"
-          autoComplete="on"
+          autoComplete="email"
           placeholder="email@email.com"
         />
         {errors.email?.type === "required" && (
